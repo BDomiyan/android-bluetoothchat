@@ -1,0 +1,4 @@
+#Thu Nov 14 22:12:58 IST 2019
+base.0=C\:\\Users\\yoganathan\\Downloads\\connectivity-samples-master\\connectivity-samples-master\\BluetoothChat\\Application\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
