@@ -16,6 +16,7 @@
 
 package com.example.android.bluetoothchat;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -45,6 +46,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.android.common.logger.Log;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInput;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  * This fragment controls Bluetooth to communicate with other devices.
@@ -189,7 +198,11 @@ public class BluetoothChatFragment extends Fragment {
         });
 
         // Initialize the BluetoothChatService to perform bluetooth connections
-        mChatService = new BluetoothChatService(activity, mHandler);
+        /**
+         * this is important part
+         */
+
+        mChatService = new BluetoothChatService( mHandler);
 
         // Initialize the buffer for outgoing messages
         mOutStringBuffer = new StringBuffer();
@@ -222,8 +235,44 @@ public class BluetoothChatFragment extends Fragment {
         // Check that there's actually something to send
         if (message.length() > 0) {
             // Get the message bytes and tell the BluetoothChatService to write
+
+            /////this is
+            test t=new test(message);
+
+
+
+
+
+            String filename="file.ser";
+            ObjectOutputStream out;
+            byte[] data = new byte[0];
+
+            try {
+//                FileOutputStream file=new FileOutputStream(filename);
+//                ObjectOutputStream out = new ObjectOutputStream(file);
+//
+//                out.writeObject(t);
+//
+//                out.close();
+//                file.close();
+
+                ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                ObjectOutputStream oos = new ObjectOutputStream(bos);
+                oos.writeObject(t);
+                oos.flush();
+                data = bos.toByteArray();
+            }
+            catch (IOException ex)
+            {
+
+            }
+
+
             byte[] send = message.getBytes();
-            mChatService.write(send);
+            Toast.makeText(getActivity().getApplicationContext(),String.valueOf(data.length),Toast.LENGTH_LONG).show();
+
+            //mChatService.write(send);
+            mChatService.write(data);
 
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
@@ -280,9 +329,10 @@ public class BluetoothChatFragment extends Fragment {
         actionBar.setSubtitle(subTitle);
     }
 
-    /**
+    /**`
      * The Handler that gets information back from the BluetoothChatService
      */
+    @SuppressLint("HandlerLeak")
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -307,13 +357,38 @@ public class BluetoothChatFragment extends Fragment {
                     byte[] writeBuf = (byte[]) msg.obj;
                     // construct a string from the buffer
                     String writeMessage = new String(writeBuf);
-                    mConversationArrayAdapter.add("Me:  " + writeMessage);
+                    //mConversationArrayAdapter.add("Me:  " + writeMessage);
                     break;
                 case Constants.MESSAGE_READ:
                     byte[] readBuf = (byte[]) msg.obj;
                     // construct a string from the valid bytes in the buffer
                     String readMessage = new String(readBuf, 0, msg.arg1);
-                    mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + readMessage);
+
+                    //this part forchange to object
+                    test obj=new test("HIII");
+                    ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
+                    ObjectInput in = null;
+                    try {
+                        in = new ObjectInputStream(bis);
+                        obj = (test)in.readObject();
+
+                    }
+                    catch (IOException ex)
+                    {
+
+                    }
+                    catch (ClassNotFoundException ex)
+                    {
+
+                    }
+
+
+
+
+
+
+                    met1(obj.data2);
+                    mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:
                     // save the connected device's name
@@ -332,6 +407,29 @@ public class BluetoothChatFragment extends Fragment {
             }
         }
     };
+
+
+    private void met1(String str)
+    {
+        switch (str)
+        {
+            case "1":
+                Toast.makeText(getActivity().getApplicationContext(),"this is 1",Toast.LENGTH_LONG).show();
+                break;
+
+            case "2":
+                Toast.makeText(getActivity().getApplicationContext(),"this is 2",Toast.LENGTH_LONG).show();
+                break;
+
+                default:
+                    Toast.makeText(getActivity().getApplicationContext(),"this is 2",Toast.LENGTH_LONG).show();
+
+
+
+
+        }
+
+    }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode) {
@@ -408,6 +506,11 @@ public class BluetoothChatFragment extends Fragment {
                 // Ensure this device is discoverable by others
                 ensureDiscoverable();
                 return true;
+            }
+
+            case R.id.test:{
+                Intent test=new Intent(getActivity(),NewFace.class);
+                startActivity(test);
             }
         }
         return false;
