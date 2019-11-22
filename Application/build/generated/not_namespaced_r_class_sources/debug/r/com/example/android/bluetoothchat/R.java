@@ -3687,7 +3687,7 @@ public final class R {
     public static final int abc_tooltip=0x7f0a001b;
     public static final int activity_device_list=0x7f0a001c;
     public static final int activity_main=0x7f0a001d;
-    public static final int activity_new_face=0x7f0a001e;
+    public static final int activity_tom=0x7f0a001e;
     public static final int custom_dialog=0x7f0a001f;
     public static final int device_name=0x7f0a0020;
     public static final int fragment_bluetooth_chat=0x7f0a0021;

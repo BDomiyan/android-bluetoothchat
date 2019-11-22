@@ -22,7 +22,7 @@
 15        android:allowBackup="true"
 15-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:12:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-16-->[androidx.core:core:1.1.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\c527b78844be871c44103f6f45a963fb\core-1.1.0\AndroidManifest.xml:24:18-86
+16-->[androidx.core:core:1.1.0] C:\Users\DELL\.gradle\caches\transforms-2\files-2.1\f01b27bb220ecb79298884ef36a7a2fb\core-1.1.0\AndroidManifest.xml:24:18-86
 17        android:debuggable="true"
 18        android:icon="@drawable/ic_launcher"
 18-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:13:9-45
@@ -31,9 +31,9 @@
 20        android:testOnly="true"
 21        android:theme="@style/AppTheme" >
 21-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:15:9-40
-22        <activity android:name="com.example.android.bluetoothchat.NewFace" />
-22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:9-54
-22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:19-42
+22        <activity android:name="com.example.android.Tom" />
+22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:9-69
+22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:19-57
 23        <activity
 23-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:18:9-27:20
 24            android:name="com.example.android.bluetoothchat.MainActivity"

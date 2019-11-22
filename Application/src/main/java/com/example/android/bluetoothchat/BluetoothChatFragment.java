@@ -45,6 +45,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.android.Tom;
 import com.example.android.common.logger.Log;
 
 import java.io.ByteArrayInputStream;
@@ -133,7 +134,7 @@ public class BluetoothChatFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         if (mChatService != null) {
-            mChatService.stop();
+            //mChatService.stop();
         }
     }
 
@@ -500,7 +501,7 @@ public class BluetoothChatFragment extends Fragment {
                 // Launch the DeviceListActivity to see devices and do scan
                 Intent serverIntent = new Intent(getActivity(), DeviceListActivity.class);
                 startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
-                return true;
+
             }
             case R.id.discoverable: {
                 // Ensure this device is discoverable by others
@@ -509,8 +510,11 @@ public class BluetoothChatFragment extends Fragment {
             }
 
             case R.id.test:{
-                Intent test=new Intent(getActivity(),NewFace.class);
+                Intent test=new Intent(getActivity(), Tom.class);
                 startActivity(test);
+                Toast.makeText(getActivity().getApplicationContext(),"i got it",Toast.LENGTH_LONG).show();
+                return true;
+
             }
         }
         return false;

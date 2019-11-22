@@ -921,7 +921,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_device_list
 layout activity_main
-layout activity_new_face
+layout activity_tom
 layout custom_dialog
 layout device_name
 layout fragment_bluetooth_chat

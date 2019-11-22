@@ -920,7 +920,7 @@ int layout abc_select_dialog_material 0x7f0a001a
 int layout abc_tooltip 0x7f0a001b
 int layout activity_device_list 0x7f0a001c
 int layout activity_main 0x7f0a001d
-int layout activity_new_face 0x7f0a001e
+int layout activity_tom 0x7f0a001e
 int layout custom_dialog 0x7f0a001f
 int layout device_name 0x7f0a0020
 int layout fragment_bluetooth_chat 0x7f0a0021
