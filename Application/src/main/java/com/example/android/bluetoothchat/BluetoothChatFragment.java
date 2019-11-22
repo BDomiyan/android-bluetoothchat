@@ -511,8 +511,8 @@ public class BluetoothChatFragment extends Fragment {
 
             case R.id.test:{
                 Intent test=new Intent(getActivity(), Tom.class);
-                startActivity(test);
-                Toast.makeText(getActivity().getApplicationContext(),"i got it",Toast.LENGTH_LONG).show();
+                startActivityForResult(test,REQUEST_CONNECT_DEVICE_INSECURE);
+                //Toast.makeText(getActivity().getApplicationContext(),"i got it",Toast.LENGTH_LONG).show();
                 return true;
 
             }
