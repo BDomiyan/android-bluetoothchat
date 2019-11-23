@@ -361,35 +361,41 @@ public class BluetoothChatFragment extends Fragment {
                     //mConversationArrayAdapter.add("Me:  " + writeMessage);
                     break;
                 case Constants.MESSAGE_READ:
-                    byte[] readBuf = (byte[]) msg.obj;
-                    // construct a string from the valid bytes in the buffer
-                    String readMessage = new String(readBuf, 0, msg.arg1);
 
-                    //this part forchange to object
-                    test obj=new test("HIII");
-                    ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
-                    ObjectInput in = null;
                     try {
-                        in = new ObjectInputStream(bis);
-                        obj = (test)in.readObject();
 
-                    }
-                    catch (IOException ex)
+                        byte[] readBuf = (byte[]) msg.obj;
+                        // construct a string from the valid bytes in the buffer
+                        String readMessage = new String(readBuf, 0, msg.arg1);
+
+                        //this part forchange to object
+                        test obj=new test("HIII");
+                        ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
+                        ObjectInput in = null;
+                        try {
+                            in = new ObjectInputStream(bis);
+                            obj = (test)in.readObject();
+
+                        }
+                        catch (IOException ex)
+                        {
+
+                        }
+                        catch (ClassNotFoundException ex)
+                        {
+
+                        }
+
+
+                        met1(obj.data2);
+
+                        mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
+
+                    }catch (Exception e)
                     {
-
-                    }
-                    catch (ClassNotFoundException ex)
-                    {
-
+                        met1(e.toString());
                     }
 
-
-
-
-
-
-                    met1(obj.data2);
-                    mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
                     break;
                 case Constants.MESSAGE_DEVICE_NAME:
                     // save the connected device's name

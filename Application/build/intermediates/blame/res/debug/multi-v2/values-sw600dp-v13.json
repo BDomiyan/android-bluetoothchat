@@ -14,6 +14,25 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\2946ca0ea6c89dab7d7d9fbc18e54292\\material-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,10,11,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,115,185,256,328,386,444,553,617,680",
+                        "endLines": "2,3,4,5,6,7,9,10,11,15",
+                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
+                        "endOffsets": "110,180,251,323,381,439,548,612,675,847"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15,16,18,21,22",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "611,671,741,812,884,942,1000,1109,1309,1372",
+                        "endLines": "10,11,12,13,14,15,17,18,21,25",
+                        "endColumns": "59,69,70,71,57,57,10,63,62,10",
+                        "endOffsets": "666,736,807,879,937,995,1104,1168,1367,1539"
+                    }
+                },
+                {
                     "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
@@ -23,11 +42,11 @@
                         "endOffsets": "739,808"
                     },
                     "to": {
-                        "startLines": "10,11",
+                        "startLines": "19,20",
                         "startColumns": "4,4",
-                        "startOffsets": "611,679",
+                        "startOffsets": "1173,1241",
                         "endColumns": "67,67",
-                        "endOffsets": "674,742"
+                        "endOffsets": "1236,1304"
                     }
                 },
                 {
@@ -41,12 +60,12 @@
                         "endOffsets": "883"
                     },
                     "to": {
-                        "startLines": "12",
+                        "startLines": "26",
                         "startColumns": "4",
-                        "startOffsets": "747",
-                        "endLines": "16",
+                        "startOffsets": "1544",
+                        "endLines": "30",
                         "endColumns": "12",
-                        "endOffsets": "987"
+                        "endOffsets": "1784"
                     }
                 }
             ]
