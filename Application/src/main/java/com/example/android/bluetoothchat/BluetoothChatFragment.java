@@ -107,6 +107,7 @@ public class BluetoothChatFragment extends Fragment {
 
 
     private ArrayList<FoodData> arr=new ArrayList<>();
+    private ArrayList<FoodData> cart=new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -285,6 +286,7 @@ public class BluetoothChatFragment extends Fragment {
                 }
 
                 Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
+                inta.putExtra("Position",pos);
                 inta.putExtra("FoodData",data);
                 //startActivity(inta);
                 startActivityForResult(inta,FOOD_DETAILS);
@@ -568,9 +570,19 @@ public class BluetoothChatFragment extends Fragment {
             case FOOD_DETAILS:
                 if(resultCode==Activity.RESULT_OK)
                 {
+                    FoodData foodObj;
                     Bundle bun=data.getExtras();
-                    String tom=bun.getString("Price");
-                    Toast.makeText(getActivity(),tom,Toast.LENGTH_LONG).show();
+                    int qua=bun.getInt("Quantity");
+                    int pos=bun.getInt("Position");
+
+                    if(qua>0)
+                    {
+                        foodObj=arr.get(pos);
+                        foodObj.quantity=qua;
+                        cart.add(foodObj);
+
+                    }
+                    Toast.makeText(getActivity(),String.valueOf(cart.size()),Toast.LENGTH_LONG).show();
 
                 }
         }

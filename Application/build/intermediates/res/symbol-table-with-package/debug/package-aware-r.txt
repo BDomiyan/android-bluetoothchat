@@ -1184,6 +1184,7 @@ id dimensions
 id direct
 id disableHome
 id discoverable
+id done
 id edit_query
 id edit_text_out
 id end
@@ -1212,6 +1213,7 @@ id icon_group
 id ifRoom
 id image
 id in
+id increase
 id info
 id insecure_connect_scan
 id invisible
@@ -1222,6 +1224,7 @@ id largeLabel
 id left
 id line1
 id line3
+id linearLayout2
 id listMode
 id list_item
 id log_fragment
@@ -1259,7 +1262,9 @@ id pin
 id price
 id progress_circular
 id progress_horizontal
+id quantity
 id radio
+id reduse
 id right
 id right_icon
 id right_side
