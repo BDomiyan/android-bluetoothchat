@@ -122,7 +122,7 @@ public class Tom extends Activity {
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // If it's already paired, skip it, because it's been listed already
-                if (device != null && device.getBondState() != BluetoothDevice.BOND_BONDED) {
+                if (device != null ) {
                     mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
                     pairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
 
@@ -154,6 +154,7 @@ public class Tom extends Activity {
                 doDiscovery();
                 v.setVisibility(View.GONE);
             }
+
         });
 
         // Initialize array adapters. One for already paired devices and
@@ -196,6 +197,10 @@ public class Tom extends Activity {
             String noDevices = getResources().getText(R.string.none_paired).toString();
             pairedDevicesArrayAdapter.add(noDevices);
         }
+
+
+        doDiscovery();
+
 
     }
 }

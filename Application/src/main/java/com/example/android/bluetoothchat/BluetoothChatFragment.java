@@ -73,6 +73,7 @@ public class BluetoothChatFragment extends Fragment {
     private static final int REQUEST_CONNECT_DEVICE_SECURE = 1;
     private static final int REQUEST_CONNECT_DEVICE_INSECURE = 2;
     private static final int REQUEST_ENABLE_BT = 3;
+    private static final int FOOD_DETAILS=4;
 
     // Layout Views
     private ListView mConversationView;
@@ -285,7 +286,8 @@ public class BluetoothChatFragment extends Fragment {
 
                 Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
                 inta.putExtra("FoodData",data);
-                startActivity(inta);
+                //startActivity(inta);
+                startActivityForResult(inta,FOOD_DETAILS);
             }
         });
 
@@ -561,6 +563,15 @@ public class BluetoothChatFragment extends Fragment {
                                 Toast.LENGTH_SHORT).show();
                         activity.finish();
                     }
+                }
+
+            case FOOD_DETAILS:
+                if(resultCode==Activity.RESULT_OK)
+                {
+                    Bundle bun=data.getExtras();
+                    String tom=bun.getString("Price");
+                    Toast.makeText(getActivity(),tom,Toast.LENGTH_LONG).show();
+
                 }
         }
     }
