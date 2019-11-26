@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.example.android.Tom"></activity>
+        <activity android:name="com.example.android.FoodDetail"></activity>
+        <activity android:name="com.example.android.Tom" />
         <activity
             android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden"

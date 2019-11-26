@@ -33,7 +33,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -45,6 +48,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.android.FoodDetail;
 import com.example.android.Tom;
 import com.example.android.common.logger.Log;
 
@@ -55,6 +59,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
 /**
  * This fragment controls Bluetooth to communicate with other devices.
@@ -81,7 +86,7 @@ public class BluetoothChatFragment extends Fragment {
     /**
      * Array adapter for the conversation thread
      */
-    private ArrayAdapter<String> mConversationArrayAdapter;
+    //private ArrayAdapter<String> mConversationArrayAdapter;
 
     /**
      * String buffer for outgoing messages
@@ -97,6 +102,9 @@ public class BluetoothChatFragment extends Fragment {
      * Member object for the chat services
      */
     private BluetoothChatService mChatService = null;
+
+
+    private ArrayList<String> arr=new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -167,6 +175,42 @@ public class BluetoothChatFragment extends Fragment {
         mSendButton = view.findViewById(R.id.button_send);
     }
 
+
+    class MyAdapter extends BaseAdapter
+    {
+
+        @Override
+        public int getCount() {
+            return arr.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return null;
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return 0;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            view=getLayoutInflater().inflate(R.layout.device_card,null);
+
+            TextView name=view.findViewById(R.id.food_name);
+            TextView price=view.findViewById(R.id.price);
+            TextView des=view.findViewById(R.id.food_description);
+
+            name.setText(arr.get(i));
+            price.setText(arr.get(i));
+            des.setText(arr.get(i));
+
+            return view;
+
+        }
+    }
+
     /**
      * Set up the UI and background operations for chat.
      */
@@ -178,9 +222,16 @@ public class BluetoothChatFragment extends Fragment {
         if (activity == null) {
             return;
         }
-        mConversationArrayAdapter = new ArrayAdapter<>(activity, R.layout.message);
+//        mConversationArrayAdapter = new ArrayAdapter<>(activity, R.layout.message);
+//
+//        mConversationView.setAdapter(mConversationArrayAdapter);
 
-        mConversationView.setAdapter(mConversationArrayAdapter);
+        arr.add("Hi");
+        arr.add("this is ");
+        MyAdapter arrad=new MyAdapter();
+        mConversationView.setAdapter(arrad);
+
+
 
         // Initialize the compose field with a listener for the return key
         mOutEditText.setOnEditorActionListener(mWriteListener);
@@ -197,6 +248,29 @@ public class BluetoothChatFragment extends Fragment {
                 }
             }
         });
+
+
+
+        /**
+         * Listview listener
+
+         **/
+
+        mConversationView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
+                Toast.makeText(getContext(),String.valueOf(pos),Toast.LENGTH_LONG).show();
+                Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
+                startActivity(inta);
+            }
+        });
+
+
+
+
+
+
+
 
         // Initialize the BluetoothChatService to perform bluetooth connections
         /**
@@ -343,7 +417,7 @@ public class BluetoothChatFragment extends Fragment {
                     switch (msg.arg1) {
                         case BluetoothChatService.STATE_CONNECTED:
                             setStatus(getString(R.string.title_connected_to, mConnectedDeviceName));
-                            mConversationArrayAdapter.clear();
+                            //mConversationArrayAdapter.clear();
                             break;
                         case BluetoothChatService.STATE_CONNECTING:
                             setStatus(R.string.title_connecting);
@@ -387,10 +461,13 @@ public class BluetoothChatFragment extends Fragment {
                         }
 
 
-                        met1(obj.data2);
+                        met1(obj.data);
 
-                        mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
-
+                        //mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
+                        //Toast.makeText(getContext(),obj.data,Toast.LENGTH_LONG).show();
+                        arr.add(mConnectedDeviceName + ":  " + obj.data);
+                        MyAdapter arrad=new MyAdapter();
+                        mConversationView.setAdapter(arrad);
                     }catch (Exception e)
                     {
                         met1(e.toString());
