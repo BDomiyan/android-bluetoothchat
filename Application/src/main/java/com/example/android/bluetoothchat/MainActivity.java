@@ -52,8 +52,8 @@ public class MainActivity extends SampleActivityBase {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+//        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+//        bottomNav.setOnNavigationItemSelectedListener(navListener);
 
         if (savedInstanceState == null) {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -64,30 +64,30 @@ public class MainActivity extends SampleActivityBase {
     }
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()) {
-                        case R.id.nav_home:
-                            selectedFragment = new BluetoothChatFragment();
-                            break;
-                        case R.id.nav_favorites:
-                            selectedFragment = new Promo();
-                            break;
-                        case R.id.nav_search:
-                            selectedFragment = new Order();
-                            break;
-                    }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.sample_content_fragment,
-                            selectedFragment).commit();
-
-                    return true;
-                }
-            };
+//    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+//            new BottomNavigationView.OnNavigationItemSelectedListener() {
+//                @Override
+//                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                    Fragment selectedFragment = null;
+//
+//                    switch (item.getItemId()) {
+//                        case R.id.nav_home:
+//                            selectedFragment = new BluetoothChatFragment();
+//                            break;
+//                        case R.id.nav_favorites:
+//                            selectedFragment = new Promo();
+//                            break;
+//                        case R.id.nav_search:
+//                            selectedFragment = new Order();
+//                            break;
+//                    }
+//
+//                    getSupportFragmentManager().beginTransaction().replace(R.id.sample_content_fragment,
+//                            selectedFragment).commit();
+//
+//                    return true;
+//                }
+//            };
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {

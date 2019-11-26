@@ -44,6 +44,7 @@ public class Tom extends Activity {
      * Newly discovered devices
      */
     private ArrayAdapter<String> mNewDevicesArrayAdapter;
+    ArrayAdapter<String> pairedDevicesArrayAdapter;
 
 
 
@@ -123,6 +124,8 @@ public class Tom extends Activity {
                 // If it's already paired, skip it, because it's been listed already
                 if (device != null && device.getBondState() != BluetoothDevice.BOND_BONDED) {
                     mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+                    pairedDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+
                 }
                 // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
@@ -155,7 +158,7 @@ public class Tom extends Activity {
 
         // Initialize array adapters. One for already paired devices and
         // one for newly discovered devices
-        ArrayAdapter<String> pairedDevicesArrayAdapter =
+        pairedDevicesArrayAdapter =
                 new ArrayAdapter<>(this, R.layout.device_name);
         mNewDevicesArrayAdapter = new ArrayAdapter<>(this, R.layout.device_name);
 

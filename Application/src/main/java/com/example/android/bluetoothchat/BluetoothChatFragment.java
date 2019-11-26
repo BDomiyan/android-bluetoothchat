@@ -48,6 +48,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.android.FoodData;
 import com.example.android.FoodDetail;
 import com.example.android.Tom;
 import com.example.android.common.logger.Log;
@@ -104,7 +105,7 @@ public class BluetoothChatFragment extends Fragment {
     private BluetoothChatService mChatService = null;
 
 
-    private ArrayList<String> arr=new ArrayList<>();
+    private ArrayList<FoodData> arr=new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -202,9 +203,9 @@ public class BluetoothChatFragment extends Fragment {
             TextView price=view.findViewById(R.id.price);
             TextView des=view.findViewById(R.id.food_description);
 
-            name.setText(arr.get(i));
-            price.setText(arr.get(i));
-            des.setText(arr.get(i));
+            name.setText(arr.get(i).getFoodName());
+            price.setText(String.valueOf(arr.get(i).getPrice()));
+            des.setText(arr.get(i).getCat());
 
             return view;
 
@@ -226,8 +227,9 @@ public class BluetoothChatFragment extends Fragment {
 //
 //        mConversationView.setAdapter(mConversationArrayAdapter);
 
-        arr.add("Hi");
-        arr.add("this is ");
+
+        arr.add(new FoodData("Burger","Fast Food",5));
+        arr.add(new FoodData("Fries","Fast Food",10));
         MyAdapter arrad=new MyAdapter();
         mConversationView.setAdapter(arrad);
 
@@ -443,7 +445,7 @@ public class BluetoothChatFragment extends Fragment {
                         String readMessage = new String(readBuf, 0, msg.arg1);
 
                         //this part forchange to object
-                        test obj=new test("HIII");
+                        test obj=new test("OH My god");
                         ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
                         ObjectInput in = null;
                         try {
@@ -465,7 +467,8 @@ public class BluetoothChatFragment extends Fragment {
 
                         //mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
                         //Toast.makeText(getContext(),obj.data,Toast.LENGTH_LONG).show();
-                        arr.add(mConnectedDeviceName + ":  " + obj.data);
+                        //arr.add(mConnectedDeviceName + ":  " + obj.data);
+                        arr.add(new FoodData(obj.data,"Fast Food",5));
                         MyAdapter arrad=new MyAdapter();
                         mConversationView.setAdapter(arrad);
                     }catch (Exception e)
