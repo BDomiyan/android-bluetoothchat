@@ -1059,9 +1059,11 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable ic_action_device_access_bluetooth_searching
 drawable ic_launcher
+drawable ic_location_searching_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_shopping_cart_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1149,11 +1151,11 @@ id barrier
 id beginning
 id blocking
 id bottom
-id bottom_navigation
 id buttonPanel
 id button_scan
 id button_send
 id cancel_action
+id cart
 id center
 id center_horizontal
 id center_vertical

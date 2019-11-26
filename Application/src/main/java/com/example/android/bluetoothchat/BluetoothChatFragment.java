@@ -203,9 +203,9 @@ public class BluetoothChatFragment extends Fragment {
             TextView price=view.findViewById(R.id.price);
             TextView des=view.findViewById(R.id.food_description);
 
-            name.setText(arr.get(i).getFoodName());
-            price.setText(String.valueOf(arr.get(i).getPrice()));
-            des.setText(arr.get(i).getCat());
+            name.setText(arr.get(i).foodName);
+            price.setText("$"+String.valueOf(arr.get(i).price));
+            des.setText(arr.get(i).cat);
 
             return view;
 
