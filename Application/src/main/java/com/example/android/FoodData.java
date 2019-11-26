@@ -16,4 +16,9 @@ public class FoodData implements Serializable {
         this.quantity =0;
     }
 
+    public FoodData()
+    {
+
+    }
+
 }

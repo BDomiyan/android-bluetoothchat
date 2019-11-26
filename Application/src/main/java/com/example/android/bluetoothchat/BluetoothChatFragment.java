@@ -261,8 +261,30 @@ public class BluetoothChatFragment extends Fragment {
         mConversationView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
-                Toast.makeText(getContext(),String.valueOf(pos),Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(),String.valueOf(pos),Toast.LENGTH_LONG).show();
+
+                //this is Food data
+                FoodData obj=arr.get(pos);
+
+                String filename="file.ser";
+                ObjectOutputStream out;
+                byte[] data = new byte[0];
+
+                try {
+
+                    ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                    ObjectOutputStream oos = new ObjectOutputStream(bos);
+                    oos.writeObject(obj);
+                    oos.flush();
+                    data = bos.toByteArray();
+                }
+                catch (IOException ex)
+                {
+
+                }
+
                 Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
+                inta.putExtra("FoodData",data);
                 startActivity(inta);
             }
         });
@@ -325,13 +347,6 @@ public class BluetoothChatFragment extends Fragment {
             byte[] data = new byte[0];
 
             try {
-//                FileOutputStream file=new FileOutputStream(filename);
-//                ObjectOutputStream out = new ObjectOutputStream(file);
-//
-//                out.writeObject(t);
-//
-//                out.close();
-//                file.close();
 
                 ByteArrayOutputStream bos = new ByteArrayOutputStream();
                 ObjectOutputStream oos = new ObjectOutputStream(bos);
