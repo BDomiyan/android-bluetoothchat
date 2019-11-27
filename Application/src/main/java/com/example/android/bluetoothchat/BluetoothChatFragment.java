@@ -48,6 +48,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.example.android.Cart;
 import com.example.android.FoodData;
 import com.example.android.FoodDetail;
 import com.example.android.Tom;
@@ -232,6 +233,8 @@ public class BluetoothChatFragment extends Fragment {
 
         arr.add(new FoodData("Burger","Fast Food",5));
         arr.add(new FoodData("Fries","Fast Food",10));
+        arr.add(new FoodData("Burger","Fast Food",15));
+        arr.add(new FoodData("Fries","Fast Food",11));
         MyAdapter arrad=new MyAdapter();
         mConversationView.setAdapter(arrad);
 
@@ -265,7 +268,6 @@ public class BluetoothChatFragment extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int pos, long l) {
                 //Toast.makeText(getContext(),String.valueOf(pos),Toast.LENGTH_LONG).show();
 
-                //this is Food data
                 FoodData obj=arr.get(pos);
 
                 String filename="file.ser";
@@ -286,10 +288,12 @@ public class BluetoothChatFragment extends Fragment {
                 }
 
                 Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
-                inta.putExtra("Position",pos);
                 inta.putExtra("FoodData",data);
+                inta.putExtra("Position",pos);
                 //startActivity(inta);
                 startActivityForResult(inta,FOOD_DETAILS);
+
+
             }
         });
 
@@ -638,7 +642,45 @@ public class BluetoothChatFragment extends Fragment {
                 startActivityForResult(test,REQUEST_CONNECT_DEVICE_INSECURE);
                 //Toast.makeText(getActivity().getApplicationContext(),"i got it",Toast.LENGTH_LONG).show();
                 return true;
+            }
 
+            case R.id.cart:{
+                if(cart.size()==0)
+                {
+                    Toast.makeText(getActivity(),"Empty Cart",Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    //this is Food data
+                    //FoodData obj=arr.get(pos);
+
+                    String filename="file.ser";
+                    ObjectOutputStream out;
+                    byte[] data = new byte[0];
+
+                    try {
+
+                        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+                        ObjectOutputStream oos = new ObjectOutputStream(bos);
+                        oos.writeObject(cart);
+                        oos.flush();
+                        data = bos.toByteArray();
+                    }
+                    catch (IOException ex)
+                    {
+
+                    }
+
+                    Intent cartInta=new Intent(getActivity(), Cart.class);
+                    cartInta.putExtra("CartList",data);
+                    startActivity(cartInta);
+                   // startActivityForResult(inta,FOOD_DETAILS);
+
+
+
+                }
+
+                return true;
             }
         }
         return false;
