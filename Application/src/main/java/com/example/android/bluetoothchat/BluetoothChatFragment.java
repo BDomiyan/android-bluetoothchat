@@ -60,6 +60,7 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
@@ -481,32 +482,44 @@ public class BluetoothChatFragment extends Fragment {
                         byte[] readBuf = (byte[]) msg.obj;
                         // construct a string from the valid bytes in the buffer
                         String readMessage = new String(readBuf, 0, msg.arg1);
+                        int i= ByteBuffer.wrap(readBuf).getInt();
+
+                        if(readBuf.length==4)
+                        {
+                            //int i= ByteBuffer.wrap(readBuf).getInt();
+                            Toast.makeText(getContext(),String.valueOf(i),Toast.LENGTH_LONG).show();
+                        }
+                        else
+                        {
+                            Toast.makeText(getContext(),String.valueOf(readBuf.length),Toast.LENGTH_LONG).show();
+
+                        }
 
                         //this part forchange to object
-                        test obj=new test("OH My god");
-                        ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
-                        ObjectInput in = null;
-                        try {
-                            in = new ObjectInputStream(bis);
-                            obj = (test)in.readObject();
+//                        test obj=new test("OH My god");
+//                        ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
+//                        ObjectInput in = null;
+//                        try {
+//                            in = new ObjectInputStream(bis);
+//                            obj = (test)in.readObject();
+//
+//                        }
+//                        catch (IOException ex)
+//                        {
+//
+//                        }
+//                        catch (ClassNotFoundException ex)
+//                        {
+//
+//                        }
 
-                        }
-                        catch (IOException ex)
-                        {
 
-                        }
-                        catch (ClassNotFoundException ex)
-                        {
-
-                        }
-
-
-                        met1(obj.data);
+                        //met1(obj.data);
 
                         //mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
                         //Toast.makeText(getContext(),obj.data,Toast.LENGTH_LONG).show();
                         //arr.add(mConnectedDeviceName + ":  " + obj.data);
-                        arr.add(new FoodData(obj.data,"Fast Food",5));
+                        arr.add(new FoodData(String.valueOf(i),"Fast Food",5));
                         MyAdapter arrad=new MyAdapter();
                         mConversationView.setAdapter(arrad);
                     }catch (Exception e)
