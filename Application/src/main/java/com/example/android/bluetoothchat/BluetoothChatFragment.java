@@ -74,6 +74,7 @@ public class BluetoothChatFragment extends Fragment {
     private static final int REQUEST_CONNECT_DEVICE_INSECURE = 2;
     private static final int REQUEST_ENABLE_BT = 3;
     private static final int FOOD_DETAILS=4;
+    private static final int FOOD_CART=5;
 
     // Layout Views
     private ListView mConversationView;
@@ -379,6 +380,21 @@ public class BluetoothChatFragment extends Fragment {
         }
     }
 
+
+
+    private void handleOrder(String message)
+    {
+        if (message=="order")
+        {
+            Toast.makeText(getActivity(),message,Toast.LENGTH_LONG).show();
+        }
+        if(message=="delete")
+        {
+            Toast.makeText(getActivity(),"Hobfhds",Toast.LENGTH_LONG).show();
+        }
+
+    }
+
     /**
      * The action listener for the EditText widget, to listen for the return key
      */
@@ -585,9 +601,31 @@ public class BluetoothChatFragment extends Fragment {
                         cart.add(foodObj);
 
                     }
-                    Toast.makeText(getActivity(),String.valueOf(cart.size()),Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getActivity(),String.valueOf(cart.size()),Toast.LENGTH_LONG).show();
 
                 }
+            case FOOD_CART:
+                if(resultCode==Activity.RESULT_OK)
+                {
+                    Bundle bun=data.getExtras();
+                    int message=bun.getInt("message");
+                    //handleOrder(message);
+
+                    if (message==20)
+                    {
+                        Toast.makeText(getActivity(),"Order daw",Toast.LENGTH_LONG).show();
+                    }
+                    if (message==21)
+                    {
+                        Toast.makeText(getActivity(),"Delete daw",Toast.LENGTH_LONG).show();
+
+                    }
+
+
+                }
+
+
+
         }
     }
 
@@ -672,11 +710,8 @@ public class BluetoothChatFragment extends Fragment {
 
                     Intent cartInta=new Intent(getActivity(), Cart.class);
                     cartInta.putExtra("CartList",data);
-                    startActivity(cartInta);
-                   // startActivityForResult(inta,FOOD_DETAILS);
-
-
-
+                    //startActivity(cartInta);
+                    startActivityForResult(cartInta,FOOD_CART);
                 }
 
                 return true;

@@ -3,10 +3,12 @@ package com.example.android;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +26,12 @@ public class Cart extends Activity {
     ArrayList<FoodData> cartList;
 
     ListView listView1;
+    TextView totalTxt;
+
+    String order="order";
+    String delete="delete";
+
+    Button buttonOrder,buttonDelete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +39,47 @@ public class Cart extends Activity {
         setContentView(R.layout.activity_cart);
 
         listView1=findViewById(R.id.cart_list);
+        totalTxt=findViewById(R.id.cart_total);
+        buttonOrder=findViewById(R.id.button_order);
+        buttonDelete=findViewById(R.id.button_delete);
+
+        getData();
+        MyAdapter cartAdapter=new MyAdapter();
+        listView1.setAdapter(cartAdapter);
+
+        calTotal();
 
 
+        buttonOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("message",20);
 
+                // Set result and finish this Activity
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+            }
+        });
+
+        buttonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("message",21);
+
+                // Set result and finish this Activity
+                setResult(Activity.RESULT_OK, intent);
+                finish();
+
+            }
+        });
+
+    }
+
+
+    private void getData()
+    {
         extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("CartList");
 
@@ -48,7 +94,7 @@ public class Cart extends Activity {
             in = new ObjectInputStream(bis);
 
             cartList=(ArrayList<FoodData>) in.readObject();
-            Toast.makeText(getApplicationContext(),String.valueOf(cartList.size()),Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),String.valueOf(cartList.size()),Toast.LENGTH_LONG).show();
 
 
         }
@@ -61,9 +107,24 @@ public class Cart extends Activity {
 
         }
 
+    }
 
-        MyAdapter cartAdapter=new MyAdapter();
-        listView1.setAdapter(cartAdapter);
+
+    private void calTotal()
+    {
+        int total=0;
+        String totalString;
+
+        if(cartList.size()>0)
+        {
+            for(FoodData i:cartList)
+            {
+                total=total+i.price*i.quantity;
+            }
+
+        }
+        totalString="$"+String.valueOf(total);
+        totalTxt.setText(totalString);
 
     }
 
@@ -96,11 +157,16 @@ public class Cart extends Activity {
 //
 //            name.setText(cartList.get(i).foodName);
 //            des.setText(cartList.get(i).quantity);
-            view=getLayoutInflater().inflate(R.layout.device_name,null);
+            view=getLayoutInflater().inflate(R.layout.cart_card,null);
 
-            TextView name=view.findViewById(R.id.name_device);
+            TextView name=view.findViewById(R.id.cart_name);
+            TextView quantity=view.findViewById(R.id.cart_quantity);
+            TextView price=view.findViewById(R.id.cart_price);
 
-            name.setText("Hii this is ");
+
+            name.setText(cartList.get(i).foodName);
+            quantity.setText(String.valueOf(cartList.get(i).quantity));
+            price.setText(String.valueOf(cartList.get(i).quantity*cartList.get(i).price));
 
 
             return view;

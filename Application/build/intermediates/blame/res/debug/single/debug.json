@@ -584,6 +584,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color\\abc_tint_edittext.xml"
     },
     {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_buttonstyle2.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\drawable\\buttonstyle2.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_material_light.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\color\\abc_primary_text_material_light.xml"
     },
@@ -758,6 +762,10 @@
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_btn_radio_on_to_off_mtrl_animation.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable\\btn_radio_on_to_off_mtrl_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_buttonstyle1.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\drawable\\buttonstyle1.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility_off.xml.flat",
@@ -1220,6 +1228,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_list_longpressed_holo.9.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_cart_card.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\layout\\cart_card.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_scrubber_control_to_pressed_mtrl_000.png"
     },
@@ -1586,6 +1598,10 @@
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_abc_select_dialog_material.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_foodchip.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\drawable\\foodchip.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\color_switch_thumb_material_dark.xml.flat",
