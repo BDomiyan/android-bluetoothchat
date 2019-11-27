@@ -18,7 +18,7 @@
 12-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:9:22-65
 13
 14    <application
-14-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:11:5-34:19
+14-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:11:5-35:19
 15        android:allowBackup="true"
 15-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:12:9-35
 16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -31,41 +31,44 @@
 20        android:testOnly="true"
 21        android:theme="@style/AppTheme" >
 21-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:15:9-40
-22        <activity android:name="com.example.android.FoodDetail" />
-22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:9-76
-22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:19-64
-23        <activity android:name="com.example.android.Tom" />
-23-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:18:9-60
-23-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:18:19-57
-24        <activity
-24-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:19:9-28:20
-25            android:name="com.example.android.bluetoothchat.MainActivity"
-25-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:20:13-41
-26            android:configChanges="orientation|keyboardHidden"
-26-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:21:13-63
-27            android:label="@string/app_name" >
-27-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:22:13-45
-28            <intent-filter>
-28-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:23:13-27:29
-29                <action android:name="android.intent.action.MAIN" />
-29-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:24:17-69
-29-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:24:25-66
-30
-31                <category android:name="android.intent.category.LAUNCHER" />
-31-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:26:17-77
-31-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:26:27-74
-32            </intent-filter>
-33        </activity>
-34        <activity
-34-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:29:9-33:64
-35            android:name="com.example.android.bluetoothchat.DeviceListActivity"
-35-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:30:13-47
-36            android:configChanges="orientation|keyboardHidden"
-36-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:31:13-63
-37            android:label="@string/select_device"
-37-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:32:13-50
-38            android:theme="@android:style/Theme.Holo.Dialog" />
-38-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:33:13-61
-39    </application>
-40
-41</manifest>
+22        <activity android:name="com.example.android.Cart" />
+22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:9-70
+22-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:17:19-58
+23        <activity android:name="com.example.android.FoodDetail" />
+23-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:18:9-67
+23-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:18:19-64
+24        <activity android:name="com.example.android.Tom" />
+24-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:19:9-60
+24-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:19:19-57
+25        <activity
+25-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:20:9-29:20
+26            android:name="com.example.android.bluetoothchat.MainActivity"
+26-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:21:13-41
+27            android:configChanges="orientation|keyboardHidden"
+27-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:22:13-63
+28            android:label="@string/app_name" >
+28-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:23:13-45
+29            <intent-filter>
+29-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:24:13-28:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:25:17-69
+30-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:25:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:27:17-77
+32-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:27:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:30:9-34:64
+36            android:name="com.example.android.bluetoothchat.DeviceListActivity"
+36-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:31:13-47
+37            android:configChanges="orientation|keyboardHidden"
+37-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:32:13-63
+38            android:label="@string/select_device"
+38-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:33:13-50
+39            android:theme="@android:style/Theme.Holo.Dialog" />
+39-->C:\Users\DELL\Documents\GitHub\android-bluetoothchat\Application\src\main\AndroidManifest.xml:34:13-61
+40    </application>
+41
+42</manifest>
