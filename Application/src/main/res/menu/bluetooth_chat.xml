@@ -28,7 +28,19 @@
         android:icon="@drawable/ic_shopping_cart_black_24dp"
         android:title="Cart"
         android:showAsAction="ifRoom"
-        ></item>
+        >
+
+    </item>
+
+    <item
+        android:id="@+id/track"
+        android:title="Track Order"
+        android:icon="@drawable/ic_track_changes_black_24dp"
+        android:showAsAction="ifRoom"
+        >
+
+    </item>
+
 
     <item
         android:id="@+id/secure_connect_scan"

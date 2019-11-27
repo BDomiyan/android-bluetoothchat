@@ -1068,7 +1068,9 @@ drawable ic_location_searching_black_24dp
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_refresh_black_24dp
 drawable ic_shopping_cart_black_24dp
+drawable ic_track_changes_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1361,6 +1363,7 @@ id top
 id topPanel
 id total
 id touch_outside
+id track
 id transition_current_scene
 id transition_layout_save
 id transition_position
