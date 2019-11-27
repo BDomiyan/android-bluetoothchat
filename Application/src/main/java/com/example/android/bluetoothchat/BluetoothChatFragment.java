@@ -35,7 +35,6 @@ import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -146,7 +145,7 @@ public class BluetoothChatFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         if (mChatService != null) {
-            //mChatService.stop();
+            mChatService.stop();
         }
     }
 
