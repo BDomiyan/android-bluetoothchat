@@ -491,7 +491,7 @@ public class BluetoothChatService {
 
         public void run() {
             Log.i(TAG, "BEGIN mConnectedThread");
-            byte[] buffer = new byte[10240];
+            byte[] buffer = new byte[1024];
             int bytes;
 
             // Keep listening to the InputStream while connected

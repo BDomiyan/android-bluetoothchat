@@ -10,9 +10,9 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 public class GhostProtocal {
-    public   static final int LEN=10240;        //this is length of GP Packet
+    public   static final int LEN=1024;        //this is length of GP Packet
     public static final int HEADER_LEN=4;
-    public static final int BODY_LEN=10236;
+    public static final int BODY_LEN=1020;
 
     public static final int SEND_MENU=1001;
     public static final int THIS_IS_MENU=1002;

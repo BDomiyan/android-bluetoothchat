@@ -49,7 +49,6 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.android.Cart;
 import com.example.android.FoodData;
-import com.example.android.FoodDetail;
 import com.example.android.GhostProtocal;
 import com.example.android.Tom;
 import com.example.android.common.logger.Log;
@@ -111,6 +110,7 @@ public class BluetoothChatFragment extends Fragment {
 
     private ArrayList<FoodData> arr=new ArrayList<>();
     private ArrayList<FoodData> cart=new ArrayList<>();
+    private GhostProtocal protocalObj;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -118,6 +118,7 @@ public class BluetoothChatFragment extends Fragment {
         setHasOptionsMenu(true);
         // Get local Bluetooth adapter
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        protocalObj=new GhostProtocal();
 
         // If the adapter is null, then Bluetooth is not supported
         FragmentActivity activity = getActivity();
@@ -254,6 +255,7 @@ public class BluetoothChatFragment extends Fragment {
                     TextView textView = view.findViewById(R.id.edit_text_out);
                     String message = textView.getText().toString();
                     sendMessage(message);
+                    sendByte(protocalObj.sendConformOrder());
                 }
             }
         });
@@ -289,11 +291,11 @@ public class BluetoothChatFragment extends Fragment {
 
                 }
 
-                Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
-                inta.putExtra("FoodData",data);
-                inta.putExtra("Position",pos);
-                //startActivity(inta);
-                startActivityForResult(inta,FOOD_DETAILS);
+               // Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
+//                inta.putExtra("FoodData",data);
+//                inta.putExtra("Position",pos);
+//                //startActivity(inta);
+//                startActivityForResult(inta,FOOD_DETAILS);
 
 
             }
@@ -373,13 +375,19 @@ public class BluetoothChatFragment extends Fragment {
             byte[] send = message.getBytes();
             Toast.makeText(getActivity().getApplicationContext(),String.valueOf(data.length),Toast.LENGTH_LONG).show();
 
+            //mChatService.write(protocalObj.sendCloseOrder());
             //mChatService.write(send);
-            mChatService.write(data);
 
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
             mOutEditText.setText(mOutStringBuffer);
         }
+    }
+
+
+    private void sendByte(byte[] data)
+    {
+        mChatService.write(data);
     }
 
 
@@ -483,43 +491,9 @@ public class BluetoothChatFragment extends Fragment {
                         byte[] readBuf = (byte[]) msg.obj;
                         // construct a string from the valid bytes in the buffer
                         String readMessage = new String(readBuf, 0, msg.arg1);
-                        int i= ByteBuffer.wrap(readBuf).getInt();
-
-                        if(readBuf.length==4)
-                        {
-                            //int i= ByteBuffer.wrap(readBuf).getInt();
-                            Toast.makeText(getContext(),String.valueOf(i),Toast.LENGTH_LONG).show();
-                        }
-                        else
-                        {
-                            Toast.makeText(getContext(),String.valueOf(readBuf.length),Toast.LENGTH_LONG).show();
-
-                        }
-
-                        //this part forchange to object
-//                        test obj=new test("OH My god");
-//                        ByteArrayInputStream bis = new ByteArrayInputStream(readBuf);
-//                        ObjectInput in = null;
-//                        try {
-//                            in = new ObjectInputStream(bis);
-//                            obj = (test)in.readObject();
-//
-//                        }
-//                        catch (IOException ex)
-//                        {
-//
-//                        }
-//                        catch (ClassNotFoundException ex)
-//                        {
-//
-//                        }
+                        int i= protocalObj.getHeaderVal(readBuf);
 
 
-                        //met1(obj.data);
-
-                        //mConversationArrayAdapter.add(mConnectedDeviceName + ":  " + obj.data);
-                        //Toast.makeText(getContext(),obj.data,Toast.LENGTH_LONG).show();
-                        //arr.add(mConnectedDeviceName + ":  " + obj.data);
                         arr.add(new FoodData(String.valueOf(i),"Fast Food",5));
                         MyAdapter arrad=new MyAdapter();
                         mConversationView.setAdapter(arrad);
