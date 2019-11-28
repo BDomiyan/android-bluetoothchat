@@ -10,17 +10,24 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 public class GhostProtocal {
-    private  static final int LEN=10240;        //this is length of GP Packet
-    private static final int HEADER_LEN=4;
-    private static final int BODY_LEN=10236;
+    public   static final int LEN=10240;        //this is length of GP Packet
+    public static final int HEADER_LEN=4;
+    public static final int BODY_LEN=10236;
 
-    private static final int SEND_MENU=1001;
-    private  static final int THIS_IS_MENU=1002;
-    private static final int MY_ORDER=1003;
+    public static final int SEND_MENU=1001;
+    public static final int THIS_IS_MENU=1002;
+    public static final int MY_ORDER=1003;
 
-    private static final int CONFORM_ORDER=1110;
-    private static final int READY_ORDER=1111;
-    private static final int CLOSE_ORDER=1112;
+    public static final int CONFORM_ORDER=1110;
+    public static final int READY_ORDER=1111;
+    public static final int CLOSE_ORDER=1112;
+
+
+    //this is to store state of order
+    public static final String CONFORM_STATE="Preparing your order";
+    public static final String READY_STATE="Order is ready";
+    public static final String CLOSE_STATE="Order Closed";
+
 
     public int getHeaderVal (byte[] byArr)
     {
@@ -43,6 +50,23 @@ public class GhostProtocal {
     {
         byte[] arr=ByteBuffer.allocate(4).putInt(SEND_MENU).array();
         return arr;
+    }
+
+
+    //below three function for
+    public byte[] sendConformOrder()
+    {
+        return ByteBuffer.allocate(4).putInt(CONFORM_ORDER).array();
+    }
+
+    public byte[] sendReadyOrder()
+    {
+        return ByteBuffer.allocate(4).putInt(READY_ORDER).array();
+    }
+
+    public byte[] sendCloseOrder()
+    {
+        return ByteBuffer.allocate(4).putInt(CLOSE_ORDER).array();
     }
 
 
@@ -99,20 +123,7 @@ public class GhostProtocal {
         return data;
     }
 
-    public byte[] sendConformOrder()
-    {
-        return ByteBuffer.allocate(4).putInt(CONFORM_ORDER).array();
-    }
 
-    public byte[] sendReadyOrder()
-    {
-        return ByteBuffer.allocate(4).putInt(READY_ORDER).array();
-    }
-
-    public byte[] sendCloseOrder()
-    {
-        return ByteBuffer.allocate(4).putInt(CLOSE_ORDER).array();
-    }
 
 
 }

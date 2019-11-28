@@ -50,6 +50,7 @@ import androidx.fragment.app.FragmentActivity;
 import com.example.android.Cart;
 import com.example.android.FoodData;
 import com.example.android.FoodDetail;
+import com.example.android.GhostProtocal;
 import com.example.android.Tom;
 import com.example.android.common.logger.Log;
 
@@ -718,6 +719,7 @@ public class BluetoothChatFragment extends Fragment {
                     }
                     catch (IOException ex)
                     {
+
 
                     }
 
