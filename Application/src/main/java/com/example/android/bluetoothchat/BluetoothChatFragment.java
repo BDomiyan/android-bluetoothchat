@@ -237,7 +237,7 @@ public class BluetoothChatFragment extends Fragment {
         arr.add(new FoodData("Burger","Fast Food",5));
         arr.add(new FoodData("Fries","Fast Food",10));
         arr.add(new FoodData("Burger","Fast Food",15));
-        arr.add(new FoodData("Fries","Fast Food",11));
+//        arr.add(new FoodData("Fries","Fast Food",11));
         MyAdapter arrad=new MyAdapter();
         mConversationView.setAdapter(arrad);
 
@@ -255,7 +255,7 @@ public class BluetoothChatFragment extends Fragment {
                     TextView textView = view.findViewById(R.id.edit_text_out);
                     String message = textView.getText().toString();
                     sendMessage(message);
-                    sendByte(protocalObj.sendConformOrder());
+                    sendByte(protocalObj.requestMenu());
                 }
             }
         });
@@ -490,11 +490,14 @@ public class BluetoothChatFragment extends Fragment {
 
                         byte[] readBuf = (byte[]) msg.obj;
                         // construct a string from the valid bytes in the buffer
-                        String readMessage = new String(readBuf, 0, msg.arg1);
-                        int i= protocalObj.getHeaderVal(readBuf);
+                        //String readMessage = new String(readBuf, 0, msg.arg1);
+                        //int i= protocalObj.getHeaderVal(readBuf);
+//                        ArrayList<FoodData> dat=protocalObj.converteToFoodData(readBuf);
+//                        Toast.makeText(getContext(),String.valueOf(dat.size()),Toast.LENGTH_LONG).show();
 
 
-                        arr.add(new FoodData(String.valueOf(i),"Fast Food",5));
+
+                        //arr.add(new FoodData(String.valueOf(i),"Fast Food",5));
                         MyAdapter arrad=new MyAdapter();
                         mConversationView.setAdapter(arrad);
                     }catch (Exception e)
@@ -535,7 +538,7 @@ public class BluetoothChatFragment extends Fragment {
                 break;
 
                 default:
-                    Toast.makeText(getActivity().getApplicationContext(),"this is 2",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity().getApplicationContext(),str,Toast.LENGTH_LONG).show();
 
 
 
