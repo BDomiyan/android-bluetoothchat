@@ -16,8 +16,17 @@ public class FoodData implements Serializable {
         this.quantity =0;
     }
 
+    public FoodData(String foodName, String cat, int price,int qua) {
+        this.foodName = foodName;
+        this.cat = cat;
+        this.price = price;
+        this.quantity =qua;
+    }
+
     public FoodData()
     {
+        this.quantity=0;
+        this.price=0;
 
     }
 

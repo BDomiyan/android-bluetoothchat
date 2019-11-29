@@ -493,7 +493,9 @@ public class BluetoothChatFragment extends Fragment {
                         String readMessage = new String(readBuf, 0, msg.arg1);
                         met1(String.valueOf(readMessage.length()));
                         //int i= protocalObj.getHeaderVal(readBuf);
-                        stringToFoodData(readMessage);
+                        //stringToFoodData(readMessage);
+                        //tom(readMessage);
+                        arr=protocalObj.stringToFoodData(readMessage);
 
 
 
@@ -715,81 +717,78 @@ public class BluetoothChatFragment extends Fragment {
         return false;
     }
 
+
     public void stringToFoodData(String data)
     {
-        //ArrayList<FoodData> foodList=new ArrayList<>();
-        //Toast.makeText(getActivity().getApplicationContext(),data,Toast.LENGTH_LONG).show();
-        FoodData tempFoodData=new FoodData();
+        ArrayList<FoodData> foodList=new ArrayList<>();
 
+        String name="test";
+        String cat="test";
+        int price=1000;
+        int qua=1000;
         char temp;
         int prev=0;
+
         if(data.charAt(0)=='+')
         {
-            Toast.makeText(getActivity().getApplicationContext(),data,Toast.LENGTH_LONG).show();
             for (int i=1;i<data.length();i++)
             {
-                temp=data.charAt(1);
+                temp=data.charAt(i);
 
-                switch (temp)
+                if(temp=='!')
                 {
-                    case '!':
+                    if(prev==0)
                     {
-                        if(prev==0)
-                        {
-                            prev=i;
-                        }
-                        else
-                        {
-                            tempFoodData.quantity=Integer.parseInt(data.substring(prev+1,i-1));
-                            arr.add(tempFoodData);
-                            Toast.makeText(getActivity().getApplicationContext(),"Hi this is ",Toast.LENGTH_LONG).show();
-                            prev=i;
-
-                        }
-                        break;
-
-                    }
-
-                    case  '@':
-                    {
-                        tempFoodData.foodName=data.substring(prev+1,i-1);
                         prev=i;
-                        break;
-
                     }
-
-                    case  '#':
+                    else
                     {
-                        Toast.makeText(getActivity().getApplicationContext(),"#",Toast.LENGTH_LONG).show();
-                        tempFoodData.cat=data.substring(prev+1,i-1);
+                        qua=Integer.parseInt(data.substring(prev+1,i));
+                        arr.add(new FoodData(name,cat,price,qua));
+                        //arr.add(new FoodData(data.substring(prev+1,i),"Fast",100));
                         prev=i;
-                        break;
-
-                    }
-                    case '$':
-                    {
-                        Toast.makeText(getActivity().getApplicationContext(),"$",Toast.LENGTH_LONG).show();
-                        tempFoodData.price=Integer.parseInt(data.substring(prev+1,i-1));
-                        prev=i;
-                        break;
-
-                    }
-                    case '+':
-                    {
-                        arr.add(tempFoodData);
-                        prev=i;
-                        break;
-                    }
-
-                    default:
-                    {
-                        break;
 
                     }
                 }
+
+                if(temp=='@')
+                {
+                    name=data.substring(prev+1,i);
+                    //arr.add(new FoodData(data.substring(prev+1,i),"Fast",100));
+                    prev=i;
+                }
+
+                if(temp=='#')
+                {
+                    cat=data.substring(prev+1,i);
+                    //arr.add(new FoodData(data.substring(prev+1,i),"Fast",100));
+                    prev=i;
+                }
+
+                if(temp=='$')
+                {
+                    price=Integer.parseInt(data.substring(prev+1,i));
+                    //arr.add(new FoodData(data.substring(prev+1,i),"Fast",100));
+                    prev=i;
+                }
+
+                if(temp=='+')
+                {
+                    qua=Integer.parseInt(data.substring(prev+1,i));
+                    arr.add(new FoodData(name,cat,price,qua));
+                    //arr.add(tempObj);
+                    //arr.add(new FoodData(data.substring(prev+1,i),"Fastx",100));
+                    prev=i;
+                }
             }
+
+
+
         }
 
     }
+
+
+
 
 }
