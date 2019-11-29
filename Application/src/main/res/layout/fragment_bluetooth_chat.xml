@@ -27,17 +27,13 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:dividerHeight="4dp"
-        android:transcriptMode="alwaysScroll" />
+        android:transcriptMode="alwaysScroll" >
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:rippleColor="@color/black"
-        android:layout_gravity="bottom|right"
-        android:src="@drawable/ic_refresh_black_24dp">
+    </ListView>
 
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
 
 
 
@@ -46,18 +42,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <EditText
-            android:id="@+id/edit_text_out"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_weight="1" />
-
         <Button
             android:id="@+id/button_send"
-            android:layout_width="wrap_content"
+            android:textStyle="italic"
+            android:background="@color/button_blue"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/send" />
+            android:text="Refresh" />
     </LinearLayout>
 
 </LinearLayout>

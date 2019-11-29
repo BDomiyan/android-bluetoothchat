@@ -179,7 +179,7 @@ public class BluetoothChatFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         mConversationView = view.findViewById(R.id.in);
-        mOutEditText = view.findViewById(R.id.edit_text_out);
+        //mOutEditText = view.findViewById(R.id.edit_text_out);
         mSendButton = view.findViewById(R.id.button_send);
     }
 
@@ -245,7 +245,7 @@ public class BluetoothChatFragment extends Fragment {
 
 
         // Initialize the compose field with a listener for the return key
-        mOutEditText.setOnEditorActionListener(mWriteListener);
+       // mOutEditText.setOnEditorActionListener(mWriteListener);
 
         // Initialize the send button with a listener that for click events
         mSendButton.setOnClickListener(new View.OnClickListener() {
@@ -253,9 +253,9 @@ public class BluetoothChatFragment extends Fragment {
                 // Send a message using content of the edit text widget
                 View view = getView();
                 if (null != view) {
-                    TextView textView = view.findViewById(R.id.edit_text_out);
-                    String message = textView.getText().toString();
-                    sendMessage(message);
+                    //TextView textView = view.findViewById(R.id.edit_text_out);
+                    //String message = textView.getText().toString();
+                    //sendMessage(message);
                     sendByte(protocalObj.requestMenu());
                 }
             }
@@ -381,7 +381,7 @@ public class BluetoothChatFragment extends Fragment {
 
             // Reset out string buffer to zero and clear the edit text field
             mOutStringBuffer.setLength(0);
-            mOutEditText.setText(mOutStringBuffer);
+           // mOutEditText.setText(mOutStringBuffer);
         }
     }
 
@@ -670,18 +670,7 @@ public class BluetoothChatFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.secure_connect_scan: {
-                // Launch the DeviceListActivity to see devices and do scan
-                Intent serverIntent = new Intent(getActivity(), DeviceListActivity.class);
-                startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_SECURE);
-                return true;
-            }
-            case R.id.insecure_connect_scan: {
-                // Launch the DeviceListActivity to see devices and do scan
-                Intent serverIntent = new Intent(getActivity(), DeviceListActivity.class);
-                startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE_INSECURE);
 
-            }
             case R.id.discoverable: {
                 // Ensure this device is discoverable by others
                 ensureDiscoverable();
