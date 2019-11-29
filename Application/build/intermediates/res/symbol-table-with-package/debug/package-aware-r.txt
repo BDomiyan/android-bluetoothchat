@@ -1055,6 +1055,7 @@ drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
 drawable buttonstyle1
 drawable buttonstyle2
+drawable circle
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1157,9 +1158,12 @@ id auto
 id barrier
 id beginning
 id blocking
+id bott
 id bottom
 id buttonList
 id buttonPanel
+id button_cancel
+id button_cart
 id button_delete
 id button_order
 id button_scan
@@ -1228,6 +1232,7 @@ id icon_group
 id ifRoom
 id image
 id in
+id increse
 id info
 id insecure_connect_scan
 id invisible
@@ -1236,6 +1241,7 @@ id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
 id left
+id lin
 id line1
 id line3
 id listMode
@@ -1276,7 +1282,9 @@ id pin
 id price
 id progress_circular
 id progress_horizontal
+id qua
 id radio
+id redce
 id right
 id right_icon
 id right_side
@@ -1354,6 +1362,7 @@ id title_paired_devices
 id title_template
 id top
 id topPanel
+id total
 id touch_outside
 id track
 id transition_current_scene
@@ -1427,6 +1436,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_cart
 layout activity_device_list
+layout activity_food_details
 layout activity_main
 layout activity_tom
 layout cart_card

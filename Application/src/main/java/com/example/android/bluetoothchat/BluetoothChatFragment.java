@@ -624,10 +624,14 @@ public class BluetoothChatFragment extends Fragment {
                     if (message==20)
                     {
                         Toast.makeText(getActivity(),"Order daw",Toast.LENGTH_LONG).show();
+                        //String food=protocalObj.FoodDataToString(cart);
+                        sendByte(protocalObj.sendOrder(cart));
+
                     }
                     if (message==21)
                     {
-                        Toast.makeText(getActivity(),"Delete daw",Toast.LENGTH_LONG).show();
+                        cart.clear();
+                        Toast.makeText(getActivity(),"Deleted",Toast.LENGTH_LONG).show();
 
                     }
 

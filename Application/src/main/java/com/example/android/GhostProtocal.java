@@ -124,6 +124,33 @@ public class GhostProtocal {
     }
 
 
+
+    public byte[] sendOrder(ArrayList<FoodData> foli)
+    {
+        String data=FoodDataToString(foli);
+        byte[] stringByte=data.getBytes();      //this is data
+        int len=stringByte.length;
+
+        byte[] finalByte=new byte[len+4];       //this is to final bytearray
+
+        byte[] arr=ByteBuffer.allocate(4).putInt(MY_ORDER   ).array();     //this is code
+
+        for(int i=0;i<4;i++)
+        {
+            finalByte[i]=arr[i];
+        }
+
+        for(int i=0;i<len;i++)
+        {
+            finalByte[i+4]=stringByte[i];
+        }
+
+        return finalByte;
+
+
+    }
+
+
     public String FoodDataToString(ArrayList<FoodData> food)
     {
         int count=food.size();
@@ -141,6 +168,7 @@ public class GhostProtocal {
     }
 
 
+    //this is to get only string part
     public String byteToString(byte[] arr)
     {
         int len=arr.length;
