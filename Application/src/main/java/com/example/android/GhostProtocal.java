@@ -141,6 +141,22 @@ public class GhostProtocal {
     }
 
 
+    public String byteToString(byte[] arr)
+    {
+        int len=arr.length;
+        byte[] finalarr=new byte[len-4];
+
+
+        for (int i=0;i<finalarr.length;i++)
+        {
+            finalarr[i]=arr[i+4];
+        }
+        String str=new String(finalarr);
+
+        return str;
+    }
+
+
     public ArrayList<FoodData> stringToFoodData(String data)
     {
         ArrayList<FoodData> foodList=new ArrayList<>();

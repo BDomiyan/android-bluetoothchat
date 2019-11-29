@@ -489,22 +489,35 @@ public class BluetoothChatFragment extends Fragment {
                     try {
 
                         byte[] readBuf = (byte[]) msg.obj;
+                        int i= protocalObj.getHeaderVal(readBuf);
                         // construct a string from the valid bytes in the buffer
                         String readMessage = new String(readBuf, 0, msg.arg1);
-                        met1(String.valueOf(readMessage.length()));
-                        //int i= protocalObj.getHeaderVal(readBuf);
-                        //stringToFoodData(readMessage);
-                        //tom(readMessage);
-                        arr=protocalObj.stringToFoodData(readMessage);
+                        //met1(String.valueOf(readMessage.length()));
+
+                        //arr=protocalObj.stringToFoodData(readMessage);
+                        switch (i)
+                        {
+                            case GhostProtocal.THIS_IS_MENU:
+                            {
+                                met1("Menu refreshed");
+                                //arr=protocalObj.stringToFoodData(protocalObj.byteToString(readBuf));
+                                readMessage=protocalObj.byteToString(readBuf);
+                                arr=protocalObj.stringToFoodData(readMessage);
+                                MyAdapter arrad=new MyAdapter();
+                                mConversationView.setAdapter(arrad);
+                            }
+
+                        }
 
 
 
 
 
 
-                        arr.add(new FoodData(readMessage,"Fast Food",5));
-                        MyAdapter arrad=new MyAdapter();
-                        mConversationView.setAdapter(arrad);
+
+//                        arr.add(new FoodData(readMessage,"Fast Food",5));
+//                        MyAdapter arrad=new MyAdapter();
+//                        mConversationView.setAdapter(arrad);
                     }catch (Exception e)
                     {
                         met1(e.toString());
