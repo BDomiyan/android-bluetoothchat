@@ -718,12 +718,14 @@ public class BluetoothChatFragment extends Fragment {
     public void stringToFoodData(String data)
     {
         //ArrayList<FoodData> foodList=new ArrayList<>();
+        //Toast.makeText(getActivity().getApplicationContext(),data,Toast.LENGTH_LONG).show();
         FoodData tempFoodData=new FoodData();
 
         char temp;
         int prev=0;
         if(data.charAt(0)=='+')
         {
+            Toast.makeText(getActivity().getApplicationContext(),data,Toast.LENGTH_LONG).show();
             for (int i=1;i<data.length();i++)
             {
                 temp=data.charAt(1);
@@ -740,9 +742,11 @@ public class BluetoothChatFragment extends Fragment {
                         {
                             tempFoodData.quantity=Integer.parseInt(data.substring(prev+1,i-1));
                             arr.add(tempFoodData);
+                            Toast.makeText(getActivity().getApplicationContext(),"Hi this is ",Toast.LENGTH_LONG).show();
                             prev=i;
 
                         }
+                        break;
 
                     }
 
@@ -750,29 +754,36 @@ public class BluetoothChatFragment extends Fragment {
                     {
                         tempFoodData.foodName=data.substring(prev+1,i-1);
                         prev=i;
+                        break;
 
                     }
 
                     case  '#':
                     {
+                        Toast.makeText(getActivity().getApplicationContext(),"#",Toast.LENGTH_LONG).show();
                         tempFoodData.cat=data.substring(prev+1,i-1);
                         prev=i;
+                        break;
 
                     }
                     case '$':
                     {
+                        Toast.makeText(getActivity().getApplicationContext(),"$",Toast.LENGTH_LONG).show();
                         tempFoodData.price=Integer.parseInt(data.substring(prev+1,i-1));
                         prev=i;
+                        break;
 
                     }
                     case '+':
                     {
                         arr.add(tempFoodData);
                         prev=i;
+                        break;
                     }
 
                     default:
                     {
+                        break;
 
                     }
                 }
