@@ -49,6 +49,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.android.Cart;
 import com.example.android.FoodData;
+import com.example.android.FoodDetails;
 import com.example.android.GhostProtocal;
 import com.example.android.Tom;
 import com.example.android.common.logger.Log;
@@ -291,11 +292,11 @@ public class BluetoothChatFragment extends Fragment {
 
                 }
 
-               // Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetail.class);
-//                inta.putExtra("FoodData",data);
-//                inta.putExtra("Position",pos);
-//                //startActivity(inta);
-//                startActivityForResult(inta,FOOD_DETAILS);
+                Intent inta=new Intent(getActivity().getApplicationContext(), FoodDetails.class);
+                inta.putExtra("FoodData",data);
+                inta.putExtra("Position",pos);
+                //startActivity(inta);
+                startActivityForResult(inta,FOOD_DETAILS);
 
 
             }
