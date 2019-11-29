@@ -48,6 +48,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.example.android.Cart;
+import com.example.android.ExampleBottomSheetDialog;
 import com.example.android.FoodData;
 import com.example.android.FoodDetails;
 import com.example.android.GhostProtocal;
@@ -720,9 +721,27 @@ public class BluetoothChatFragment extends Fragment {
 
                 return true;
             }
+
+            case R.id.track:
+            {
+                try {
+                    ExampleBottomSheetDialog bottomSheet = new ExampleBottomSheetDialog();
+                    bottomSheet.show(getFragmentManager(), "exampleBottomSheet");
+                }catch (Exception e)
+                {
+                    Toast.makeText(getActivity().getApplicationContext(),"So sad",Toast.LENGTH_LONG).show();
+                }
+
+
+
+                return true;
+
+            }
+
         }
         return false;
     }
+
 
 
     public void stringToFoodData(String data)
