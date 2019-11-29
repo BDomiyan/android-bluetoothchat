@@ -1205,7 +1205,6 @@ id disableHome
 id discoverable
 id divider2
 id edit_query
-id edit_text_out
 id end
 id end_padder
 id enterAlways
@@ -1234,7 +1233,6 @@ id image
 id in
 id increse
 id info
-id insecure_connect_scan
 id invisible
 id italic
 id item_touch_helper_previous_elevation
@@ -1310,7 +1308,6 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id secure_connect_scan
 id select_dialog_listview
 id selected
 id shortcut
