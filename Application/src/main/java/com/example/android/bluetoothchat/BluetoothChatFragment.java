@@ -490,14 +490,17 @@ public class BluetoothChatFragment extends Fragment {
 
                         byte[] readBuf = (byte[]) msg.obj;
                         // construct a string from the valid bytes in the buffer
-                        //String readMessage = new String(readBuf, 0, msg.arg1);
+                        String readMessage = new String(readBuf, 0, msg.arg1);
+                        met1(String.valueOf(readMessage.length()));
                         //int i= protocalObj.getHeaderVal(readBuf);
-//                        ArrayList<FoodData> dat=protocalObj.converteToFoodData(readBuf);
-//                        Toast.makeText(getContext(),String.valueOf(dat.size()),Toast.LENGTH_LONG).show();
+                        stringToFoodData(readMessage);
 
 
 
-                        //arr.add(new FoodData(String.valueOf(i),"Fast Food",5));
+
+
+
+                        arr.add(new FoodData(readMessage,"Fast Food",5));
                         MyAdapter arrad=new MyAdapter();
                         mConversationView.setAdapter(arrad);
                     }catch (Exception e)
@@ -710,6 +713,72 @@ public class BluetoothChatFragment extends Fragment {
             }
         }
         return false;
+    }
+
+    public void stringToFoodData(String data)
+    {
+        //ArrayList<FoodData> foodList=new ArrayList<>();
+        FoodData tempFoodData=new FoodData();
+
+        char temp;
+        int prev=0;
+        if(data.charAt(0)=='+')
+        {
+            for (int i=1;i<data.length();i++)
+            {
+                temp=data.charAt(1);
+
+                switch (temp)
+                {
+                    case '!':
+                    {
+                        if(prev==0)
+                        {
+                            prev=i;
+                        }
+                        else
+                        {
+                            tempFoodData.quantity=Integer.parseInt(data.substring(prev+1,i-1));
+                            arr.add(tempFoodData);
+                            prev=i;
+
+                        }
+
+                    }
+
+                    case  '@':
+                    {
+                        tempFoodData.foodName=data.substring(prev+1,i-1);
+                        prev=i;
+
+                    }
+
+                    case  '#':
+                    {
+                        tempFoodData.cat=data.substring(prev+1,i-1);
+                        prev=i;
+
+                    }
+                    case '$':
+                    {
+                        tempFoodData.price=Integer.parseInt(data.substring(prev+1,i-1));
+                        prev=i;
+
+                    }
+                    case '+':
+                    {
+                        arr.add(tempFoodData);
+                        prev=i;
+                    }
+
+                    default:
+                    {
+
+                    }
+                }
+            }
+        }
+
     }
 
 }

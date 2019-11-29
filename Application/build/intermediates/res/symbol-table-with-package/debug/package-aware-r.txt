@@ -1160,9 +1160,7 @@ id blocking
 id bottom
 id buttonList
 id buttonPanel
-id button_cancel
 id button_delete
-id button_done
 id button_order
 id button_scan
 id button_send
@@ -1201,7 +1199,6 @@ id dimensions
 id direct
 id disableHome
 id discoverable
-id divider
 id divider2
 id edit_query
 id edit_text_out
@@ -1231,7 +1228,6 @@ id icon_group
 id ifRoom
 id image
 id in
-id increase
 id info
 id insecure_connect_scan
 id invisible
@@ -1242,7 +1238,6 @@ id largeLabel
 id left
 id line1
 id line3
-id linearLayout2
 id listMode
 id list_item
 id log_fragment
@@ -1281,9 +1276,7 @@ id pin
 id price
 id progress_circular
 id progress_horizontal
-id quantity
 id radio
-id reduse
 id right
 id right_icon
 id right_side
@@ -1361,7 +1354,6 @@ id title_paired_devices
 id title_template
 id top
 id topPanel
-id total
 id touch_outside
 id track
 id transition_current_scene
@@ -1435,7 +1427,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_cart
 layout activity_device_list
-layout activity_food_detail
 layout activity_main
 layout activity_tom
 layout cart_card

@@ -81,7 +81,7 @@ public class GhostProtocal {
             body[i]=byArr[i];
         }
 
-        ByteArrayInputStream bis = new ByteArrayInputStream(body);
+        ByteArrayInputStream bis = new ByteArrayInputStream(byArr);
         ObjectInput in = null;
         try {
             in = new ObjectInputStream(bis);
@@ -122,6 +122,93 @@ public class GhostProtocal {
 
         return data;
     }
+
+
+    public String FoodDataToString(ArrayList<FoodData> food)
+    {
+        int count=food.size();
+        String output="+";
+
+        for (int i=0;i<count;i++)
+        {
+            String price=String.valueOf(food.get(i).price);
+            String qua=String.valueOf(food.get(i).quantity);
+            output=output+"!"+food.get(i).foodName+"@"+food.get(i).cat+"#"+price+"$"+qua;
+        }
+        output=output+"+";
+
+        return output;
+    }
+
+
+    public ArrayList<FoodData> stringToFoodData(String data)
+    {
+        ArrayList<FoodData> foodList=new ArrayList<>();
+        FoodData tempFoodData=new FoodData();
+
+        char temp;
+        int prev=0;
+        if(data.charAt(0)=='+')
+        {
+            for (int i=1;i<data.length();i++)
+            {
+                temp=data.charAt(1);
+
+                switch (temp)
+                {
+                    case '!':
+                    {
+                        if(prev==0)
+                        {
+                            prev=i;
+                        }
+                        else
+                        {
+                            tempFoodData.quantity=Integer.parseInt(data.substring(prev+1,i-1));
+                            foodList.add(tempFoodData);
+                            prev=i;
+
+                        }
+
+                    }
+
+                    case  '@':
+                    {
+                        tempFoodData.foodName=data.substring(prev+1,i-1);
+                        prev=i;
+
+                    }
+
+                    case  '#':
+                    {
+                        tempFoodData.cat=data.substring(prev+1,i-1);
+                        prev=i;
+
+                    }
+                    case '$':
+                    {
+                        tempFoodData.price=Integer.parseInt(data.substring(prev+1,i-1));
+                        prev=i;
+
+                    }
+                    case '+':
+                    {
+                        foodList.add(tempFoodData);
+                        prev=i;
+                    }
+
+                    default:
+                    {
+
+                    }
+                }
+            }
+        }
+        return foodList;
+    }
+
+
+
 
 
 
