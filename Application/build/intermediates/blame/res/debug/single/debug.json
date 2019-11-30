@@ -1336,6 +1336,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable_greycircle.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\drawable\\greycircle.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_bg_color_selector.xml.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\2946ca0ea6c89dab7d7d9fbc18e54292\\material-1.0.0\\res\\color\\mtrl_btn_bg_color_selector.xml"
     },
@@ -2002,6 +2006,10 @@
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_bottom_sheet_layout.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\layout\\bottom_sheet_layout.xml"
     },
     {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_36dp.png.flat",

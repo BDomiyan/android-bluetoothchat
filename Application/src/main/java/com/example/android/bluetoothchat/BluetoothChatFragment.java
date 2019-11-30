@@ -509,7 +509,35 @@ public class BluetoothChatFragment extends Fragment {
                                 arr=protocalObj.stringToFoodData(readMessage);
                                 MyAdapter arrad=new MyAdapter();
                                 mConversationView.setAdapter(arrad);
+                                break;
+
                             }
+
+                            case GhostProtocal.CONFORM_ORDER:
+                            {
+                                stat=GhostProtocal.CONFORM_ORDER;
+                                goTrack();
+                                //Toast.makeText(getActivity().getApplicationContext(),"order",Toast.LENGTH_LONG).show();
+                                break;
+
+                            }
+
+                            case GhostProtocal.READY_ORDER:
+                            {
+                                stat=GhostProtocal.READY_ORDER;
+                                goTrack();
+                                break;
+
+                            }
+                            case GhostProtocal.CLOSE_ORDER:
+                            {
+                                stat=GhostProtocal.CLOSE_ORDER;
+                                goTrack();
+                                break;
+
+                            }
+
+
 
                         }
 
@@ -742,6 +770,18 @@ public class BluetoothChatFragment extends Fragment {
 
         }
         return false;
+    }
+
+
+    private void goTrack()
+    {
+        try {
+            ExampleBottomSheetDialog bottomSheet = new ExampleBottomSheetDialog(this.stat);
+            bottomSheet.show(getFragmentManager(), "exampleBottomSheet");
+        }catch (Exception e)
+        {
+            Toast.makeText(getActivity().getApplicationContext(),"So sad",Toast.LENGTH_LONG).show();
+        }
     }
 
 

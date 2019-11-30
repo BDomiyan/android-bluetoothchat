@@ -639,6 +639,7 @@ color chipblue
 color colorAccent
 color colorPrimary
 color colorPrimaryDark
+color darkgrey
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -1063,6 +1064,7 @@ drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
 drawable foodchip
+drawable greycircle
 drawable ic_action_device_access_bluetooth_searching
 drawable ic_launcher
 drawable ic_location_searching_black_24dp
@@ -1161,7 +1163,10 @@ id blocking
 id bott
 id bottom
 id buttonList
+id buttonOrderConfirm
+id buttonOrderRecived
 id buttonPanel
+id buttonReady
 id button_cancel
 id button_cart
 id button_delete
@@ -1328,6 +1333,7 @@ id src_in
 id src_over
 id standard
 id start
+id status
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
@@ -1344,6 +1350,9 @@ id tag_unhandled_key_listeners
 id test
 id text
 id text2
+id textOrderConfirm
+id textOrderRecived
+id textReady
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -1436,6 +1445,7 @@ layout activity_device_list
 layout activity_food_details
 layout activity_main
 layout activity_tom
+layout bottom_sheet_layout
 layout cart_card
 layout custom_dialog
 layout design_bottom_navigation_item
