@@ -7,21 +7,89 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/status"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="This is a BottomSheet"
+        android:text="Track Your Order"
         android:textSize="25sp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="button 1" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+
+       android:paddingHorizontal="80dp"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="button 2" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOrderConfirm"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"></Button>
+
+        <TextView
+            android:id="@+id/textOrderConfirm"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="Order Confirm">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingHorizontal="80dp"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonReady"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"></Button>
+
+        <TextView
+            android:id="@+id/textReady"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="Ready">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingHorizontal="80dp"
+        android:paddingVertical="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonOrderRecived"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"></Button>
+
+        <TextView
+            android:id="@+id/textOrderRecived"
+            android:layout_marginHorizontal="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="15dp"
+            android:text="Order Recived">
+
+        </TextView>
+    </LinearLayout>
 
 </LinearLayout>

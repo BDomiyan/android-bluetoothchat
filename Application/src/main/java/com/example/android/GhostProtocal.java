@@ -21,6 +21,7 @@ public class GhostProtocal {
     public static final int CONFORM_ORDER=1110;
     public static final int READY_ORDER=1111;
     public static final int CLOSE_ORDER=1112;
+    public static final int NO_ORDER=1113;
 
 
     //this is to store state of order

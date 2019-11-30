@@ -84,6 +84,8 @@ public class BluetoothChatFragment extends Fragment {
     private EditText mOutEditText;
     private Button mSendButton;
 
+    int stat=GhostProtocal.NO_ORDER;
+
     /**
      * Name of the connected device
      */
@@ -725,7 +727,7 @@ public class BluetoothChatFragment extends Fragment {
             case R.id.track:
             {
                 try {
-                    ExampleBottomSheetDialog bottomSheet = new ExampleBottomSheetDialog();
+                    ExampleBottomSheetDialog bottomSheet = new ExampleBottomSheetDialog(this.stat);
                     bottomSheet.show(getFragmentManager(), "exampleBottomSheet");
                 }catch (Exception e)
                 {
@@ -741,6 +743,9 @@ public class BluetoothChatFragment extends Fragment {
         }
         return false;
     }
+
+
+
 
 
 

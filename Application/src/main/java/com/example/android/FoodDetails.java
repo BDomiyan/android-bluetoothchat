@@ -36,7 +36,7 @@ public class FoodDetails extends Activity {
 
         getData();
         uiAssign();
-        Toast.makeText(getApplicationContext(),obj.foodName,Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),obj.foodName,Toast.LENGTH_LONG).show();
 
         textViewIncrease.setOnClickListener(new View.OnClickListener() {
             @Override
