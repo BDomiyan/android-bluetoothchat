@@ -28,6 +28,8 @@ public class FoodDetails extends Activity {
     TextView textViewReduce,textViewIncrease,textViewQuantity,textTotal;
     Button buttonAddToCart,buttonCancel;
 
+    TextView textPrice,textCat,textName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +98,15 @@ public class FoodDetails extends Activity {
 
         buttonAddToCart=findViewById(R.id.button_cart);
         buttonCancel=findViewById(R.id.button_cancel);
+
+        textPrice=findViewById(R.id.price_detail);
+        textCat=findViewById(R.id.cat);
+        textName=findViewById(R.id.foodname);
+
+        String temp=String.valueOf(obj.price);
+        textPrice.setText("$"+temp);
+        textCat.setText(obj.cat);
+        textName.setText(obj.foodName);
     }
 
 

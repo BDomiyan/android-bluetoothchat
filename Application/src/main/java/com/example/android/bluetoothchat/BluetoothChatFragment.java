@@ -238,9 +238,9 @@ public class BluetoothChatFragment extends Fragment {
 //        mConversationView.setAdapter(mConversationArrayAdapter);
 
 
-        arr.add(new FoodData("Burger","Fast Food",5));
-        arr.add(new FoodData("Fries","Fast Food",10));
-        arr.add(new FoodData("Burger","Fast Food",15));
+//        arr.add(new FoodData("Burger","Fast Food",5));
+//        arr.add(new FoodData("Fries","Fast Food",10));
+//        arr.add(new FoodData("Burger","Fast Food",15));
 //        arr.add(new FoodData("Fries","Fast Food",11));
         MyAdapter arrad=new MyAdapter();
         mConversationView.setAdapter(arrad);
@@ -658,7 +658,7 @@ public class BluetoothChatFragment extends Fragment {
 
                     if (message==20)
                     {
-                        Toast.makeText(getActivity(),"Order daw",Toast.LENGTH_LONG).show();
+                        //Toast.makeText(getActivity(),"Order daw",Toast.LENGTH_LONG).show();
                         //String food=protocalObj.FoodDataToString(cart);
                         sendByte(protocalObj.sendOrder(cart));
                         cart.clear();
