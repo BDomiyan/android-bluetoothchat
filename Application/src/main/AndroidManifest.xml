@@ -14,7 +14,8 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.example.android.FoodDetails"></activity>
+        <activity android:name=".DicoverDevice"></activity>
+        <activity android:name="com.example.android.FoodDetails" />
         <activity android:name="com.example.android.Cart" />
         <activity android:name="com.example.android.FoodDetail" />
         <activity android:name="com.example.android.Tom" />

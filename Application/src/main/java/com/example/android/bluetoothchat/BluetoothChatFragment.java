@@ -517,6 +517,8 @@ public class BluetoothChatFragment extends Fragment {
                             {
                                 stat=GhostProtocal.CONFORM_ORDER;
                                 goTrack();
+                                sendByte(protocalObj.sendDone());
+
                                 //Toast.makeText(getActivity().getApplicationContext(),"order",Toast.LENGTH_LONG).show();
                                 break;
 
@@ -562,7 +564,9 @@ public class BluetoothChatFragment extends Fragment {
                     if (null != activity) {
                         Toast.makeText(activity, "Connected to "
                                 + mConnectedDeviceName, Toast.LENGTH_SHORT).show();
+
                     }
+                    arr.clear();
                     break;
                 case Constants.MESSAGE_TOAST:
                     if (null != activity) {
@@ -657,6 +661,7 @@ public class BluetoothChatFragment extends Fragment {
                         Toast.makeText(getActivity(),"Order daw",Toast.LENGTH_LONG).show();
                         //String food=protocalObj.FoodDataToString(cart);
                         sendByte(protocalObj.sendOrder(cart));
+                        cart.clear();
 
                     }
                     if (message==21)
@@ -701,12 +706,6 @@ public class BluetoothChatFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-
-            case R.id.discoverable: {
-                // Ensure this device is discoverable by others
-                ensureDiscoverable();
-                return true;
-            }
 
             case R.id.test:{
                 Intent test=new Intent(getActivity(), Tom.class);

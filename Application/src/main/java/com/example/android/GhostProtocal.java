@@ -8,6 +8,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class GhostProtocal {
     public   static final int LEN=1024;        //this is length of GP Packet
@@ -22,6 +23,7 @@ public class GhostProtocal {
     public static final int READY_ORDER=1111;
     public static final int CLOSE_ORDER=1112;
     public static final int NO_ORDER=1113;
+    public static final int DONE=1114;
 
 
     //this is to store state of order
@@ -68,6 +70,11 @@ public class GhostProtocal {
     public byte[] sendCloseOrder()
     {
         return ByteBuffer.allocate(4).putInt(CLOSE_ORDER).array();
+    }
+
+    public byte[] sendDone()
+    {
+        return ByteBuffer.allocate(4).putInt(DONE).array();
     }
 
 
