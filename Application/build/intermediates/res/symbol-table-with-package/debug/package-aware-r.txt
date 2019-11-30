@@ -1207,7 +1207,7 @@ id dialog_button
 id dimensions
 id direct
 id disableHome
-id discoverable
+id divider
 id divider2
 id edit_query
 id end
@@ -1442,6 +1442,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_cart
 layout activity_device_list
+layout activity_dicover_device
 layout activity_food_details
 layout activity_main
 layout activity_tom

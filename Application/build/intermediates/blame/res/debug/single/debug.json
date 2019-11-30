@@ -792,6 +792,10 @@
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\layout_activity_dicover_device.xml.flat",
+        "source": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\src\\main\\res\\layout\\activity_dicover_device.xml"
+    },
+    {
         "merged": "C:\\Users\\DELL\\Documents\\GitHub\\android-bluetoothchat\\Application\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_spinner_mtrl_am_alpha.9.png.flat",
         "source": "C:\\Users\\DELL\\.gradle\\caches\\transforms-2\\files-2.1\\d74b5b498b35fd5cb32d0a6997bb1d3d\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_spinner_mtrl_am_alpha.9.png"
     },
